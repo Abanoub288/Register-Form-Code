@@ -1,0 +1,30 @@
+nav {
+  background-color: #BBE2EC;
+}
+.container {
+  padding: 20px;
+}
+nav img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+nav p {
+  margin-left: 15px;
+  font-weight: bold;
+  font-size: 40px;
+  color: #0D9276 !important;
+}
+
+.container .btn {
+  margin-right: 10px;
+  background-color: #BBE2EC;
+  border-color: #0D9276;
+  font-size: 20px;
+  font-weight: bold;
+}
+.container .btn:hover {
+  background-color: #0D9276;
+  color: white;
+}
+

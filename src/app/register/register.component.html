@@ -1,0 +1,74 @@
+<!-- <app-nav-bar></app-nav-bar> -->
+<div class="container">
+  <form (ngSubmit)="handelRgister(registerForm)" [formGroup]="registerForm">
+
+  <h1 class="c-white text-center">Register</h1>
+
+
+    <input type="text" class="form-control" formControlName="firName"  placeholder="First name">
+    <div *ngIf="registerForm.get('firName')?.errors && registerForm.get('firName')?.touched"
+      class="alert alert-danger d-flex align-items-center" role="alert">
+      <div *ngIf="registerForm.get('firName')?.getError('required')">first Name is required</div>
+    </div>
+
+
+    <input type="text" class="form-control" formControlName="lasName" placeholder="Last name">
+    <div *ngIf="registerForm.get('lasName')?.errors && registerForm.get('lasName')?.touched"
+      class="alert alert-danger d-flex align-items-center" role="alert">
+      <div *ngIf="registerForm.get('lasName')?.getError('required')">last Name is required</div>
+    </div>
+
+
+    <input type="mail" class="form-control" formControlName="email" placeholder="Email">
+    <div *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched"
+      class="alert alert-danger d-flex align-items-center" role="alert">
+      <div *ngIf="registerForm.get('email')?.getError('email')">email invalid</div>
+      <div *ngIf="registerForm.get('email')?.getError('required')">email is required</div>
+    </div>
+
+
+    <div formArray="num">
+      <div *ngFor="let num of phoneNumbers.controls; let i = index">
+        <input type="mail" class="form-control" formControlName="phone" placeholder="mobile">
+        <div *ngIf="registerForm.get('phone')?.errors && registerForm.get('phone')?.touched"
+          class="alert alert-danger d-flex align-items-center" role="alert">
+          <div *ngIf="registerForm.get('phone')?.getError('required')">Phone is required</div>
+        </div>
+      </div>
+    </div>
+    <button  type="button" (click)="addMobile()" class="btn btn-primary add">add</button>
+
+
+    <input type="text" class="form-control" formControlName="city" placeholder="City">
+    <div *ngIf="registerForm.get('city')?.errors && registerForm.get('city')?.touched"
+      class="alert alert-danger d-flex align-items-center" role="alert">
+      <div *ngIf="registerForm.get('city')?.getError('required')">city is required</div>
+    </div>
+
+
+    <input type="text" class="form-control" formControlName="adress" placeholder="adress">
+    <div *ngIf="registerForm.get('adress')?.errors && registerForm.get('adress')?.touched"
+      class="alert alert-danger d-flex align-items-center" role="alert">
+      <div *ngIf="registerForm.get('adress')?.getError('required')">Adress is required</div>
+    </div>
+
+
+    <input type="password" class="form-control" formControlName="password" placeholder="password" minlength="8" maxlength="12">
+    <div *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched"
+      class="alert alert-danger d-flex align-items-center" role="alert">
+      <div *ngIf="registerForm.get('password')?.getError('required')">password is required</div>
+    </div>
+
+
+    <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm password">
+    <div *ngIf="registerForm.get('confirmPassword')?.errors && registerForm.get('confirmPassword')?.touched"
+      class="alert alert-danger d-flex align-items-center" role="alert">
+      <div *ngIf="registerForm.get('confirmPassword')?.getError('required')">confirm password is required</div>
+      <div *ngIf="registerForm.get('confirmPassword')?.getError('passwordMatch')">confirm password And password not match</div>
+    </div>
+
+
+    <button [disabled]="registerForm.invalid"  type="submit" class="btn button">Submit</button>
+
+  </form>
+</div>

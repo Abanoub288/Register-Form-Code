@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+body {
+  font-family: sans-serif arial;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #40A2E3;
+}
+.c-white {
+  color: white;
+}
+form {
+  background-color: #BBE2EC;
+  margin-top: 20px;
+  border: 1px solid #0D9276;
+  border-radius: 40px;
+}
+
+

@@ -1,0 +1,23 @@
+<!-- <app-nav-bar></app-nav-bar> -->
+<div class="container">
+
+  <form (ngSubmit)="handelLogin(loginForm)" [formGroup]="loginForm">
+
+  <input type="mail" class="form-control" formControlName="email" id="email" placeholder="Email">
+  <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched"
+  class="alert alert-danger d-flex align-items-center" role="alert">
+    <div *ngIf="loginForm.get('email')?.getError('email')">email invalid</div>
+    <div *ngIf="loginForm.get('email')?.getError('required')">email is required</div>
+  </div>
+
+
+  <input type="password" class="form-control" formControlName="password" placeholder="password" minlength="8" maxlength="12">
+  <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched"
+  class="alert alert-danger d-flex align-items-center" role="alert">
+    <div *ngIf="loginForm.get('password')?.getError('required')">password is required</div>
+  </div>
+
+  <button [disabled]="loginForm.invalid" (click)="login()"  type="submit" class="btn button">login</button>
+
+  </form>
+</div>

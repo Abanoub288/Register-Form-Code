@@ -1,0 +1,46 @@
+h1 {
+  font-weight: bold;
+  font-size: 60px;
+  color: #0D9276 !important;
+  padding: 20px;
+}
+form .add {
+  margin-left: 350px;
+  margin-top: 10px;
+  background-color: #0D9276;
+  width: 50px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+form input {
+  margin: 20px auto 0 auto;
+  width: 50%;
+  border: 1px solid #0D9276;
+  border-radius: 20px;
+}
+form input,
+form input::placeholder {
+  font-weight: 700;
+}
+form .button {
+  width: 500px;
+  margin-left: 400px;
+  margin-top: 50px;
+  text-align: center;
+  border-radius: 20px;
+  color: white;
+  background-color: #0D9276;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+form .alert {
+  width: 50%;
+  border-radius: 20px;
+  height: 15px;
+  margin: 5px auto 0 auto;
+}
+
